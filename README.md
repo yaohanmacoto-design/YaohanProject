@@ -1,14 +1,20 @@
-# Your Approved Project Title
+**TrikeFind: A Machine Learning for GIS-Based Tricycle Driver and Passenger Localization Using Random Forest**
 
 ## Summary
-A short description of the community problem and first features.
 
-## Current stack
-Flutter Web / Dart; planned REST API and PostgreSQL.
+TrikeFind is a web-based system designed to help passengers locate nearby available tricycle drivers using location-based services and GIS technology. It aims to make finding available transportation easier and more convenient for commuters.
 
-## Run locally
+Its planned features include passenger login, driver location and availability sharing, nearby driver localization, and map-based location viewing. The current development checkpoint also includes a report form with input validation and loading, success, empty, and error UI states.
+
+
+## Run Locally
+
 flutter pub get
 flutter run -d chrome
 
-## First checkpoint
-Date: October 15, 2026  |  Commit: "Add report form and Flutter UI states"
+## First Checkpoint
+
+- **Date:** October 22, 2026
+- **Commit:** `Add report form and Flutter UI states`
+- **Branch:** `main`
+
