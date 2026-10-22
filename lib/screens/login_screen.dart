@@ -1,38 +1,8 @@
 
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  final usernameController = TextEditingController();
-  final passwordController = TextEditingController();
-
-  String message = '';
-
-  void login() {
-    final username = usernameController.text.trim();
-    final password = passwordController.text;
-
-    setState(() {
-      if (username.isEmpty || password.isEmpty) {
-        message = 'Please enter your username and password.';
-      } else {
-        message = 'Login form submitted.';
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    usernameController.dispose();
-    passwordController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,35 +10,39 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         title: const Text('Login'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            TextField(
-              controller: usernameController,
-              decoration: const InputDecoration(
-                labelText: 'Username',
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(
+                Icons.person_outline,
+                size: 64,
+                color: Colors.teal,
               ),
-            ),
-            TextField(
-              controller: passwordController,
-              obscureText: true,
-              decoration: const InputDecoration(
-                labelText: 'Password',
+              const SizedBox(height: 16),
+              const Text(
+                'TrikeFind Login',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            ElevatedButton(
-              onPressed: login,
-              child: const Text('Login'),
-            ),
-            Text(message),
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text('Back to Home'),
-            ),
-          ],
+              const SizedBox(height: 8),
+              const Text(
+                'This is the initial login placeholder.',
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 24),
+              OutlinedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('Back to Home'),
+              ),
+            ],
+          ),
         ),
       ),
     );
